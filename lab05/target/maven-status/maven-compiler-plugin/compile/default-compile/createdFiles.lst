@@ -1,0 +1,10 @@
+ru\itmo\wp\model\domain\Event$TYPE.class
+ru\itmo\wp\model\domain\Talk.class
+ru\itmo\wp\model\repository\TalkRepository.class
+ru\itmo\wp\model\repository\impl\TalkRepositoryImpl.class
+ru\itmo\wp\web\page\Page.class
+ru\itmo\wp\model\repository\EventRepository.class
+ru\itmo\wp\model\repository\impl\BaseRepositoryImpl.class
+ru\itmo\wp\web\page\TalksPage.class
+ru\itmo\wp\model\repository\impl\EventRepositoryImpl.class
+ru\itmo\wp\model\domain\Event.class
