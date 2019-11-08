@@ -84,7 +84,7 @@ public class FrontServlet extends HttpServlet {
         }
 
         if (template == null) {
-            throw new ServletException("Unable to findById template [template=" + name + "].");
+            throw new ServletException("Unable to find template [template=" + name + "].");
         }
 
         return template;
@@ -176,7 +176,7 @@ public class FrontServlet extends HttpServlet {
                 view.put("error", validationException.getMessage());
                 for (Map.Entry<String, String[]> param : request.getParameterMap().entrySet()) {
                     String key = param.getKey();
-                    if (param.getValue() != null && param.getValue().length == 1) {
+                    if (param.getValue() != null && param.getValue().length == 1 && !key.equals("text")) {
                         String value = param.getValue()[0];
                         view.put(key, value);
                     }

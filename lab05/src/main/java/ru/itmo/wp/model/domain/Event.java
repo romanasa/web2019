@@ -3,12 +3,7 @@ package ru.itmo.wp.model.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-
 public class Event implements Serializable {
-    public enum TYPE {
-        ENTER, LOGOUT
-    }
-
     private long id;
     private long userId;
     private TYPE type;
@@ -44,5 +39,9 @@ public class Event implements Serializable {
 
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
+    }
+
+    public enum TYPE {
+        ENTER, LOGOUT
     }
 }

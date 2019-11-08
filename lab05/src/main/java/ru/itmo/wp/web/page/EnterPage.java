@@ -3,8 +3,7 @@ package ru.itmo.wp.web.page;
 import ru.itmo.wp.model.domain.Event;
 import ru.itmo.wp.model.domain.User;
 import ru.itmo.wp.model.exception.ValidationException;
-import ru.itmo.wp.model.repository.EventRepository;
-import ru.itmo.wp.model.repository.impl.EventRepositoryImpl;
+import ru.itmo.wp.model.service.EventService;
 import ru.itmo.wp.model.service.UserService;
 import ru.itmo.wp.web.exception.RedirectException;
 
@@ -14,7 +13,7 @@ import java.util.Map;
 /** @noinspection unused*/
 public class EnterPage extends Page {
     private final UserService userService = new UserService();
-    private final EventRepository eventRepository = new EventRepositoryImpl();
+    private final EventService eventService = new EventService();
 
     private void action() {
         // No operations.
@@ -34,7 +33,7 @@ public class EnterPage extends Page {
         Event event = new Event();
         event.setUserId(user.getId());
         event.setType(Event.TYPE.ENTER);
-        eventRepository.save(event);
+        eventService.add(event);
 
         request.getSession().setAttribute("user", user);
         request.getSession().setAttribute("message", "Hello, " + user.getLogin());

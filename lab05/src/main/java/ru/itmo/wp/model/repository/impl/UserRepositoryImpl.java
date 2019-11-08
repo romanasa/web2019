@@ -30,7 +30,7 @@ public class UserRepositoryImpl extends BasicRepositoryImpl<User> implements Use
 
     @Override
     public User findByEmailAndPasswordSha(String email, String passwordSha) {
-        return find("SELECT * FROM User WHERE email=? AND passwordSha=?", email,passwordSha);
+        return find("SELECT * FROM User WHERE email=? AND passwordSha=?", email, passwordSha);
     }
 
     @Override

@@ -33,14 +33,14 @@ public class EventRepositoryImpl extends BasicRepositoryImpl<Event> implements E
         return event;
     }
 
-    public Event findById(long id) {
-        return find("SELECT * FROM Event WHERE id=?", id);
+    public Event find(long id) {
+        return super.find("SELECT * FROM Event WHERE id=?", id);
     }
 
     @Override
     void setIdAndCreationTime(Event event, ResultSet generatedKeys) throws SQLException {
         event.setId(generatedKeys.getLong(1));
-        event.setCreationTime(findById(event.getId()).getCreationTime());
+        event.setCreationTime(find(event.getId()).getCreationTime());
     }
 
     @Override

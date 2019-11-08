@@ -3,6 +3,7 @@
 <#-- @ftlvariable name="text" type="java.lang.String" -->
 <#-- @ftlvariable name="users" type="ru.itmo.wp.model.domain.User[]" -->
 <#-- @ftlvariable name="talks" type="ru.itmo.wp.model.domain.Talk[]" -->
+<#-- @ftlvariable name="error" type="java.lang.String" -->
 <#import "commons.ftlh" as c>
 
 <@c.page>
@@ -34,6 +35,11 @@
             <div class="button-field">
                 <input type="submit" value="Send">
             </div>
+            <#if error??>
+                <div class="error">
+                    ${error!}
+                </div>
+            </#if>
         </form>
     </div>
     <div class="datatable">
@@ -49,7 +55,7 @@
             </tr>
             </thead>
             <tbody>
-            <#list talks as talk>
+            <#list talks?reverse as talk>
                 <tr>
                     <td>${talk.id}</td>
                     <td>${talk.sourceUserLogin}</td>

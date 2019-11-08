@@ -55,6 +55,7 @@ public class Talk implements Serializable {
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
     }
+
     public String getSourceUserLogin() {
         return userRepository.find(sourceUserId).getLogin();
     }

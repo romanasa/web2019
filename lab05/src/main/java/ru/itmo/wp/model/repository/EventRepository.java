@@ -5,6 +5,6 @@ import ru.itmo.wp.model.domain.Event;
 import java.util.List;
 
 public interface EventRepository {
-    public Event findById(long id);
+    Event find(long id);
     void save(Event event);
 }
